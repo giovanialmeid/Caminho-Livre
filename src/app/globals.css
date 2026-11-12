@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cidade-fundo text-cidade-texto antialiased;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* WCAG 2.4.7 - Foco visivel para navegacao via teclado */
+  :focus-visible {
+    outline: 3px solid #1d4ed8 !important;
+    outline-offset: 3px !important;
+  }
+}
+
+@layer components {
+  .cartao {
+    @apply bg-white border border-cidade-borda rounded-2xl shadow-sm;
+  }
+  .botao-principal {
+    @apply inline-flex items-center justify-center gap-2 bg-cidade-primaria text-white font-bold rounded-xl px-5 py-3 min-h-[48px] hover:bg-cidade-primariaEscura disabled:opacity-60 disabled:cursor-not-allowed transition-colors;
+  }
+  .botao-secundario {
+    @apply inline-flex items-center justify-center gap-2 bg-white text-cidade-primaria border-2 border-cidade-primaria font-bold rounded-xl px-5 py-3 min-h-[48px] hover:bg-emerald-50 disabled:opacity-60 transition-colors;
+  }
+  .campo {
+    @apply w-full border-2 border-cidade-borda rounded-xl px-4 py-3 text-base bg-white focus:border-cidade-info;
+  }
+  .rotulo {
+    @apply block font-bold mb-1.5;
+  }
+}
+
+/* TAMANHOS DE FONTE DINAMICOS (mesmo padrao do Happy Games) */
+body.texto-grande {
+  font-size: 1.15rem !important;
+}
+body.texto-muito-grande {
+  font-size: 1.3rem !important;
+}
+
+/* MODO DE ALTO CONTRASTE (WCAG 1.4.6) - fundo preto, texto branco, destaques amarelos */
+body.alto-contraste,
+body.alto-contraste * {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+}
+body.alto-contraste a,
+body.alto-contraste button,
+body.alto-contraste a *,
+body.alto-contraste button * {
+  color: #ffff00 !important;
+}
+body.alto-contraste a,
+body.alto-contraste button,
+body.alto-contraste input,
+body.alto-contraste select,
+body.alto-contraste textarea {
+  border: 2px solid #ffff00 !important;
+}
+body.alto-contraste .barra-grafico {
+  background-color: #ffff00 !important;
+}
+body.alto-contraste :focus-visible {
+  outline-color: #00ffff !important;
+}
