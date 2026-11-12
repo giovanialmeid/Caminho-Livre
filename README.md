@@ -68,12 +68,3 @@ npm run dev
 ```
 
 Acesse no navegador: `http://localhost:3000`
-
----
-
-## Equipe — Grupo 5 (Sistemas de Informação — FIAP)
-
-- **Giovani Almeida Oliveira**
-- **Yuri**
-- **Edmar**
-- **Luan**
